@@ -159,3 +159,43 @@ CREATE TABLE `comments` (
   FOREIGN KEY (`customer_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE
 );
+
+3. Configure Database Connection
+Open api/db.php and ensure the credentials match your local server setup:
+
+<?php
+$host = "localhost";
+$user = "root";               // Your MySQL username
+$pass = "";                   // Your MySQL password
+$dbname = "prince_e_shopping"; // The Database name
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+4. Create the Uploads Folder
+Ensure there is a folder named uploads in the root directory of your project. Note: Ensure this folder has read/write permissions so PHP can save images and documents into it.
+
+5. Run the Application
+Open your web browser and navigate to the project directory:
+http://localhost/prince-e-shopping/index.html
+
+🔒 Default Test AccountsYou can log in immediately using the following test credentials:
+** Admin User **
+Role:Admin
+Username: admin
+password: admin123
+
+** seller User **
+Role: Seller
+Username: seller1
+password: seller123
+
+** Customer User **
+
+Role: Customer
+Username: customer1
+Password: customer123
+
